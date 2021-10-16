@@ -1,0 +1,28 @@
+.myButton {
+    font-family: inherit;
+    font-size: 22px;
+    padding: 5px 10px;
+    color: #666;
+    background: #fff;
+    border-radius: 5px;
+    display: block;
+    cursor: pointer;
+}
+
+@media (max-width: 920px) {
+    .myButton {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 670px) {
+    .myButton {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 670px) {
+    .myButton {
+        font-size: 10px;
+    }
+}

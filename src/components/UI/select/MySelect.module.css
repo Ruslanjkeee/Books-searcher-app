@@ -1,0 +1,33 @@
+.MySelect {
+    font-family: inherit;
+    font-size: 14px;
+    color: #777;
+    background: #fff;
+    border: none;
+    padding: 5px 3px;
+    margin-right: 12px;
+    min-width: 180px;
+    width: 100%;
+}
+
+@media (max-width: 920px) {
+    .MySelect {
+        min-width: 160px;
+        padding: 3px 2px;
+    }
+}
+
+@media (max-width: 670px) {
+    .MySelect {
+        min-width: 130px;
+        margin-right: 6px;
+    }
+}
+
+@media (max-width: 440px) {
+    .MySelect {
+        min-width: 90px;
+        margin-right: 4px;
+        font-size: 11px;
+    }
+}
