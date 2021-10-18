@@ -1,7 +1,8 @@
 import formStore from "../stores/formStore";
 import bookStore from "../stores/bookStore";
 import cardsStore from "../stores/cardsStore";
-const _api = 'AIzaSyAN3icd9YJN7u0ksQQR619M8icQYgqodhc';
+
+const _api = process.env.REACT_APP_API_KEY;
 
 export default class BookService {
     static async getAll() {
