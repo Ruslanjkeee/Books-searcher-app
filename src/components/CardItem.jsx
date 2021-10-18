@@ -1,10 +1,14 @@
 import React from 'react';
 
 const CardItem = ({card}) => {
-    let srcImg = card.volumeInfo.imageLinks?.smallThumbnail;
-    let category = card.volumeInfo?.categories?.[0];
-    let title = card.volumeInfo?.title;
-    let authors = card.volumeInfo?.authors?.join(', ');
+    let srcImg, category, title, authors;
+
+    if(card?.volumeInfo) {
+        srcImg = card.volumeInfo.imageLinks?.smallThumbnail;
+        category = card.volumeInfo.categories?.[0];
+        title = card.volumeInfo.title;
+        authors = card.volumeInfo.authors?.join(', ');
+    }
     
     if (!srcImg) srcImg = '';
     if (!authors) authors = '';
