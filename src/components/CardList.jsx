@@ -21,11 +21,13 @@ const CardList = observer(({fetchBookById, loadMore, isLoading}) => {
     return (
         <div className="main"> 
             <p className='main_results'>Found {cardsStore.totalCards} results</p>
-            <div className="cards" onClick={delegateClickHandler}>
-                {cardsStore.cards.map((card, index) =>
-                    <CardItem card={card} key={card.id + index}/>    
-                )}
-            </div>
+            {cardsStore.cards.length > 0 &&
+                <div className="cards" onClick={delegateClickHandler}>
+                    {cardsStore.cards.map((card, index) =>
+                        <CardItem card={card} key={card.id + index}/>    
+                    )}
+                </div>
+            }
             {isLoading
                 ? <Loader/>
                 : cardsStore.totalCards > cardsStore.startIndex + startSettingStore.pagStep
