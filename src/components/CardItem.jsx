@@ -27,4 +27,4 @@ const CardItem = ({card}) => {
     )
 };
 
-export default CardItem;
+export default React.memo(CardItem);
