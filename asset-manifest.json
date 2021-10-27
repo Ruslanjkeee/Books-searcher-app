@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Books-searcher-app/static/css/main.505b0fd2.chunk.css",
-    "main.js": "/Books-searcher-app/static/js/main.ac8a9f07.chunk.js",
-    "main.js.map": "/Books-searcher-app/static/js/main.ac8a9f07.chunk.js.map",
+    "main.css": "/Books-searcher-app/static/css/main.f5ffd783.chunk.css",
+    "main.js": "/Books-searcher-app/static/js/main.0add0e48.chunk.js",
+    "main.js.map": "/Books-searcher-app/static/js/main.0add0e48.chunk.js.map",
     "runtime-main.js": "/Books-searcher-app/static/js/runtime-main.d2076c36.js",
     "runtime-main.js.map": "/Books-searcher-app/static/js/runtime-main.d2076c36.js.map",
-    "static/js/2.c0c554c2.chunk.js": "/Books-searcher-app/static/js/2.c0c554c2.chunk.js",
-    "static/js/2.c0c554c2.chunk.js.map": "/Books-searcher-app/static/js/2.c0c554c2.chunk.js.map",
+    "static/js/2.f19d9012.chunk.js": "/Books-searcher-app/static/js/2.f19d9012.chunk.js",
+    "static/js/2.f19d9012.chunk.js.map": "/Books-searcher-app/static/js/2.f19d9012.chunk.js.map",
     "index.html": "/Books-searcher-app/index.html",
-    "static/css/main.505b0fd2.chunk.css.map": "/Books-searcher-app/static/css/main.505b0fd2.chunk.css.map",
-    "static/js/2.c0c554c2.chunk.js.LICENSE.txt": "/Books-searcher-app/static/js/2.c0c554c2.chunk.js.LICENSE.txt"
+    "static/css/main.f5ffd783.chunk.css.map": "/Books-searcher-app/static/css/main.f5ffd783.chunk.css.map",
+    "static/js/2.f19d9012.chunk.js.LICENSE.txt": "/Books-searcher-app/static/js/2.f19d9012.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d2076c36.js",
-    "static/js/2.c0c554c2.chunk.js",
-    "static/css/main.505b0fd2.chunk.css",
-    "static/js/main.ac8a9f07.chunk.js"
+    "static/js/2.f19d9012.chunk.js",
+    "static/css/main.f5ffd783.chunk.css",
+    "static/js/main.0add0e48.chunk.js"
   ]
 }
