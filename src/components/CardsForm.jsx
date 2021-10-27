@@ -5,15 +5,15 @@ import MySelect from './UI/select/MySelect';
 import formStore from '../stores/formStore';
 import startSettingStore from '../stores/startSettingStore';
 import { observer } from 'mobx-react-lite';
+import classes from './AppHeader/AppHeader.module.css';
 
 const CardsForm = observer(({fetchBooks}) => {
-    
+  
     function clickHandler(e) {
         if(e) e.preventDefault();
-        if(formStore.input) {
-            fetchBooks();
-            
-        }
+        if(formStore.input === '') return;
+
+        fetchBooks();    
         if(startSettingStore.isStartApp) {
             startSettingStore.setIsStartApp(false);
         }
@@ -27,7 +27,7 @@ const CardsForm = observer(({fetchBooks}) => {
 
     return (
         <form>
-            <div className="header_search">
+            <div className={classes.header_search}>
                 <MyInput 
                     type="text" 
                     value={formStore.input} 
@@ -37,9 +37,9 @@ const CardsForm = observer(({fetchBooks}) => {
                 />
                 <MyButton onClick={clickHandler}>Search the book</MyButton>
             </div>
-            <div className='header_filters'>
-                <div className="filters_category">
-                    <label htmlFor='categories' className='filters_name'>Categories</label>
+            <div className={classes.header_filters}>
+                <div className={classes.filters_category}>
+                    <label htmlFor='categories' className={classes.filters_name}>Categories</label>
                     <MySelect
                         value={formStore.selectedCategory}
                         onChange={category => formStore.setSelectedCategory(category)}
@@ -47,8 +47,8 @@ const CardsForm = observer(({fetchBooks}) => {
                         options={['art', 'biography', 'computers', 'history', 'medical', 'poetry']}
                     />
                 </div>
-                <div className="filters_sort">
-                    <label htmlFor='sorting' className='filters_name'>Sorting by</label>
+                <div className={classes.filters_sort}>
+                    <label htmlFor='sorting' className={classes.filters_name}>Sorting by</label>
                     <MySelect
                         value={formStore.selectedSort}
                         onChange={sort => formStore.setSelectedSort(sort)}
