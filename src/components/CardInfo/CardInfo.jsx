@@ -1,24 +1,52 @@
 import { observer } from 'mobx-react-lite';
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import classes from './CardInfo.module.css';
 import bookStore from '../../stores/bookStore';
+import BookService from '../../API/BookService';
+import { useFetching } from '../../hooks/useFetching';
+import Loader from '../UI/Loader/Loader';
+import FetchError from '../FetchError';
 
 const CardInfo = observer((props) => {
-    let bookInfo = bookStore.bookInfo;
 
-    function clickHandler(e) {
+    const [fetchBookById, isBookLoading, fetchBookError] = useFetching(async () => {
+        let book = await BookService.getById();
+        bookStore.setBookInfo(book);
+    })
+    
+    useEffect(() => {
+        fetchBookById();
+    }, []);
+
+    let bookInfo = bookStore.bookInfo;
+    let volumeInfo = bookInfo?.volumeInfo;
+
+    const clickHandler = useCallback((e) => {
         bookStore.setShowBookInfo(false);
+    }, []);
+
+    let srcImg = volumeInfo?.imageLinks?.thumbnail || '';
+    let description = volumeInfo?.description || 'There is no description';
+    let title = volumeInfo?.title || '';
+    let authors = volumeInfo?.authors?.join(', ') || '';
+    let categories = volumeInfo?.categories?.join(', ') || '';
+
+    if(fetchBookError) {
+        return (
+            <FetchError
+                fetchBookError={fetchBookError}
+            />
+        )
     }
 
-    let description = bookInfo?.volumeInfo?.description || 'There is no description';
-    let title = bookInfo?.volumeInfo?.title || '';
-    let authors = bookInfo?.volumeInfo?.authors?.join(', ') || '';
-    let categories = bookInfo?.volumeInfo?.categories?.join(', ') || '';
+    if(isBookLoading) {
+        return <Loader/>
+    }
 
     return (
         <div className={classes.card}>
             <div className={classes.card_img}>
-                <img src={bookInfo?.volumeInfo?.imageLinks?.thumbnail} alt="" className={classes.img}/>
+                <img src={srcImg} alt="book" className={classes.img}/>
             </div>
             <div className={classes.card_info}>
                 <p className={classes.info_category}>{categories}</p>
